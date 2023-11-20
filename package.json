@@ -1,0 +1,25 @@
+{
+    "dependencies": {
+        "@inertiajs/vue2": "^1.0.14",
+        "font-awesome": "^4.7.0",
+        "vuetify": "^2.4.9",
+        "vuex": "^3.6.2",
+        "vue-toastification": "^1.7.11"
+    },
+    "devDependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.36",
+        "@fortawesome/free-solid-svg-icons": "^5.15.4",
+        "@fortawesome/vue-fontawesome": "^2.0.6",
+        "@mdi/font": "^7.3.67",
+        "@vitejs/plugin-vue2": "^2.3.1",
+        "axios": "^1.6.1",
+        "laravel-vite-plugin": "^0.8.0",
+        "vite": "^4.0.0"
+    },
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "type": "module"
+}

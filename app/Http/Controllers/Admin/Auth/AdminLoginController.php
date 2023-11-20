@@ -26,10 +26,10 @@ class AdminLoginController extends Controller
     {
         if ($this->authService->attemptLogin($request->validated())) {
             $request->session()->regenerate();
-            return redirect()->intended('transaction.index');
+            return response()->json(['message' => 'The user has been login']);
         }
 
-        return response()->json(['message' => 'The provided credentials do not match our records.']);
+        return response()->json(['message' => 'The provided credentials do not match our records.',422]);
     }
 
     public function logout(Request $request)

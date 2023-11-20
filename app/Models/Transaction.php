@@ -23,10 +23,12 @@ class Transaction extends Model
     {
         $totalPaid = $this->payments()->sum('amount');
         $currentDate = Carbon::now();
+        $amount = $this->amount;
         if (!$this->is_vat_inclusive) {
-            $totalPaid = $totalPaid + ($totalPaid * ($this->vat / 100));
+            $amount = $this->amount + ($this->amount * ($this->vat / 100));
         }
-        if ($totalPaid >= $this->amount ) {
+
+        if ($totalPaid >= $amount) {
             return 'Paid';
         } elseif ($currentDate->gt($this->due_on) && !$currentDate->isSameDay($this->due_on)) {
             return 'Overdue';
